@@ -5,6 +5,10 @@ using UnityEngine;
 public class BasicGun : MonoBehaviour {
 
 
+    public GameObject bullet;
+    public float speed;
+    public float CoolDown;
+
     Vector3 targetDirection;
     // Use this for initialization
     void Start () {
