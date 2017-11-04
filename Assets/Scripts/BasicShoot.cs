@@ -11,7 +11,6 @@ public class BasicShoot : MonoBehaviour {
 	public Vector2 direction;
 
 	private float myCoolDown;
-	private GameObject projectile;
 	// Use this for initialization
 	void Start () {
 		
@@ -29,15 +28,16 @@ public class BasicShoot : MonoBehaviour {
 		direction = target - myPos;
 		direction.Normalize();
 
-		if (Input.GetAxis("FireP1")>0) {
+		if (Input.GetAxis("FireP" + GetComponent<PlayerController>().playerNumber)>0) {
 			//print ("Try Fire");
 
 			Quaternion rotation = Quaternion.Euler( 0, 0, Mathf.Atan2 ( direction.y, direction.x ) * Mathf.Rad2Deg );
 			if (myCoolDown == 0) {
-				projectile = (GameObject)Instantiate (bullet, myPos, rotation);
+				GameObject projectile = (GameObject)Instantiate (bullet, myPos, rotation);
 				myCoolDown = CoolDown;
+				projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
+				projectile.tag = "p" + GetComponent<PlayerController>().playerNumber;
 			}
-			projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
 		}
 
 	}
