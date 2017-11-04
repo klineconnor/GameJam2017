@@ -7,9 +7,14 @@ public class PlayerController : MonoBehaviour {
 	public int playerNumber;
     public float speed;
 	Rigidbody2D rb;
+	public EntityManager em;
 
 
 	public Vector3 outputMovement;
+
+
+
+	private bool shuttingDown = false;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -37,5 +42,15 @@ public class PlayerController : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
+	}
+	void OnApplicationQuit()
+	{
+		shuttingDown = true;
+	}
+
+	void OnDestroy() {
+		if (!shuttingDown) {
+			em.RespawnEntity (this.gameObject);
+		}
 	}
 }

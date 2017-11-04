@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61042523869655290}
   m_Layer: 0
   m_Name: P1Spawn
-  m_TagString: Empty
+  m_TagString: Respawn
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46ec50bad52e34d4eb5fb5533fcb4369, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entity: {fileID: 0}
+  entity: {fileID: 1175580890992170, guid: 81ba507cb85abcb47a557c6704996183, type: 2}
   spawnAtStart: 1
 --- !u!114 &114828213247977266
 MonoBehaviour:

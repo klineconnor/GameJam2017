@@ -21,15 +21,14 @@ public class EntityManager : MonoBehaviour {
         print("added spawner");
     }
 
-    public void SpawnStartingSpawns()
+    public void RespawnEntity(GameObject entity)
     {
-        /*print("EM starting spawns. " + entitySpawners.Count + " spawners in list");
         for (int i = 0; i < entitySpawners.Count; i++)
         {
-            if (entitySpawners[i].GetComponent<EntitySpawner>().spawnAtStart)
-            {
+			if (entitySpawners[i].GetComponent<EntitySpawner>().entity.tag == entity.tag)
+            { 
                 entitySpawners[i].GetComponent<EntitySpawner>().SpawnEntity();
             }
-        }*/
+        }
     }
 }

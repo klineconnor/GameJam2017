@@ -112,6 +112,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1001 &103415287
 Prefab:
   m_ObjectHideFlags: 0
@@ -234,6 +235,8 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81ba507cb85abcb47a557c6704996183, type: 2}
   m_IsPrefabParent: 0
+=======
+>>>>>>> master
 --- !u!1 &346751365
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,5 +395,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
