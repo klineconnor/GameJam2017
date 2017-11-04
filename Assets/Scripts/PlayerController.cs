@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour {
     public float speed;
 	Rigidbody2D rb;
 
+
+	public Vector3 outputMovement;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -24,6 +26,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		float moveHorizontal = Input.GetAxis("HorizontalP" + playerNumber);
 		float moveVertical = Input.GetAxis("VerticalP" + playerNumber);
-		Vector3 movement = new Vector3(moveHorizontal, moveVertical);
+		Vector3 movement = new Vector3(moveHorizontal, moveVertical, 0);
+		outputMovement = movement;
 		transform.Translate(movement * speed * Time.deltaTime); 	}
 }

@@ -193,6 +193,11 @@ Prefab:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 114343820320021198, guid: 81ba507cb85abcb47a557c6704996183,
+        type: 2}
+      propertyPath: playerNumber
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 81ba507cb85abcb47a557c6704996183, type: 2}
   m_IsPrefabParent: 0
@@ -398,5 +403,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Reticle: {fileID: 1772956063}
   bullet: {fileID: 1588502448822020, guid: 6e0479015b3754140b607b2579eef608, type: 2}
-  speed: 10
+  speed: 20
   CoolDown: 5
