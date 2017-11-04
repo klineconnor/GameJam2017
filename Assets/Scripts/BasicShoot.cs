@@ -17,11 +17,13 @@ public class BasicShoot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		if (myCoolDown > 0) {
 			myCoolDown--;
 		}
 
 		if (Input.GetAxis("FireP1")>0) {
+			print ("Try Fire");
 			Vector2 target = Reticle.transform.position;
 			Vector2 myPos = new Vector2(transform.position.x,transform.position.y);
 			Vector2 direction = target - myPos;
