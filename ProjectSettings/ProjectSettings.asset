@@ -4,7 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 13
-  productGUID: ec850aee110efdf4397f6bf63baae436
+  productGUID: 23402f0ec828541469e492d80a2dc437
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   defaultScreenOrientation: 4
@@ -599,13 +599,12 @@ PlayerSettings:
     daydream:
       daydreamIconForeground: {fileID: 0}
       daydreamIconBackground: {fileID: 0}
-  cloudServicesEnabled:
-    UNet: 1
+  cloudServicesEnabled: {}
   facebookSdkVersion: 7.9.4
   apiCompatibilityLevel: 2
-  cloudProjectId: 2876b4a7-175f-454d-927a-703e25dabd8d
-  projectName: GameJam2017
-  organizationId: shroudingmists
+  cloudProjectId: ce8a5ecd-b995-49e5-b4bd-b4b29fa9583e
+  projectName: GameJam2017 (3)
+  organizationId: obliviongamer27
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
