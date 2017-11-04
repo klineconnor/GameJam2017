@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCrosshair : MonoBehaviour {
+public class PlayerCrosshair1 : MonoBehaviour {
     public float MAX_CROSSHAIR_DISTANCE;
     public Camera mainCamera;
 
@@ -10,16 +10,16 @@ public class PlayerCrosshair : MonoBehaviour {
     public Vector3 testPos;
     public Vector3 testDiff;
     Vector2 crosshairDirection;
-	int playerNumber;
+
 	// Use this for initialization
 	void Start () {
-		playerNumber = GetComponentInParent<PlayerController>().playerNumber;
+		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		crosshairDirection.x = Input.GetAxis("ReticalHP" + playerNumber);
-		crosshairDirection.y = Input.GetAxis("ReticalVP" + playerNumber);
+		crosshairDirection.x = Input.GetAxis("ReticalHP1");
+		crosshairDirection.y = Input.GetAxis("ReticalVP1");
         //Vector3 mousePos = Input.mousePosition;
         //crosshairDirection = mainCamera.ScreenToWorldPoint(new Vector3(mousePos.x, mousePos.y, mainCamera.nearClipPlane));
         //crosshairDirection = crosshairDirection - new Vector2(transform.position.x, transform.position.y);

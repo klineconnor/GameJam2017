@@ -1,25 +1,29 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
+	public int playerNumber;
     public float speed;
+	Rigidbody2D rb;
 
-    private Rigidbody2D rb2d;
-    
+	void Start()
+	{
+		rb = GetComponent<Rigidbody2D>();
+	}
 
-    private void Start()
+    /*private void FixedUpdate()
     {
-        rb2d = GetComponent<Rigidbody2D>();
-    }
-
-    private void FixedUpdate()
-    {
-        float moveHorizontal = Input.GetAxis("Horizontal");
-        float moveVertical = Input.GetAxis("Vertical");
-        Vector2 movement = new Vector2(moveHorizontal, moveVertical);
-        rb2d.AddForce(movement * speed);
-    }
+		float moveHorizontal = Input.GetAxis("HorizontalP" + playerNumber);
+		float moveVertical = Input.GetAxis("VerticalP" + playerNumber);
+        Vector3 movement = new Vector3(moveHorizontal, moveVertical);
+		rb.AddForce(movement * speed * Time.deltaTime, ForceMode2D.Impulse);
+    }*/
+	private void Update()
+	{
+		float moveHorizontal = Input.GetAxis("HorizontalP" + playerNumber);
+		float moveVertical = Input.GetAxis("VerticalP" + playerNumber);
+		Vector3 movement = new Vector3(moveHorizontal, moveVertical);
+		transform.Translate(movement * speed * Time.deltaTime); 	}
 }
