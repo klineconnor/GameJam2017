@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour {
 	public int playerNumber;
     public float speed;
 	Rigidbody2D rb;
+	public EntityManager em;
 
 
 	public Vector3 outputMovement;
@@ -37,5 +38,9 @@ public class PlayerController : MonoBehaviour {
 			Destroy(gameObject);
 		}
 
+	}
+
+	void OnDestroy() {
+		em.RespawnEntity (this.gameObject);
 	}
 }

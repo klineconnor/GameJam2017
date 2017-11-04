@@ -11,7 +11,7 @@ public class TileObject : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         levelManager = gameObject.GetComponentInParent<LevelManager>();
-		if (!levelManager.editMode && ((tag == "Empty") || (tag == "Spawn")))
+		if (!levelManager.editMode && ((tag == "Empty") || (tag == "Respawn")))
         {
             GetComponent<SpriteRenderer>().enabled = false;
         }
