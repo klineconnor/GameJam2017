@@ -13,11 +13,12 @@ public class BasicGun : MonoBehaviour {
 
     // Update is called once per frame
     void Update()
-    {
-        Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+	{
+		Vector2 diff = GetComponentInParent<BasicShoot>().direction;
+        //Vector3 diff = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         diff.Normalize();
 
-        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg;
+        float rot_z = Mathf.Atan2(diff.y, diff.x) * Mathf.Rad2Deg + 90;
         transform.rotation = Quaternion.Euler(0f, 0f, rot_z - 90);
     }
 }
