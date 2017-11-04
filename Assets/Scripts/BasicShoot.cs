@@ -23,7 +23,7 @@ public class BasicShoot : MonoBehaviour {
 		}
 
 		if (Input.GetAxis("FireP1")>0) {
-			print ("Try Fire");
+			//print ("Try Fire");
 			Vector2 target = Reticle.transform.position;
 			Vector2 myPos = new Vector2(transform.position.x,transform.position.y);
 			Vector2 direction = target - myPos;

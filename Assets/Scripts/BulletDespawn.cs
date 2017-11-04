@@ -17,4 +17,17 @@ public class BulletDespawn : MonoBehaviour {
 		}
 		despawnTime--;
 	}
+
+	void OnTriggerEnter(Collider other) {
+		print (other.gameObject.tag);
+		if (other.gameObject.tag == "Wall") {
+			Destroy(gameObject);
+		}
+
+	}
+	void OnCollisionEnter(Collision collision)
+	{
+		print (collision.gameObject.tag);
+
+	}
 }
