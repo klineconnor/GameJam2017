@@ -28,7 +28,7 @@ public class PlayerCrosshair2 : MonoBehaviour {
         //testMouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         //crosshairDirection = Camera.main.ScreenToWorldPoint(Input.mousePosition) - temp;
         //testDiff = crosshairDirection;
-        crosshairDirection = crosshairDirection.normalized * MAX_CROSSHAIR_DISTANCE;
+		crosshairDirection = crosshairDirection.normalized * MAX_CROSSHAIR_DISTANCE;
         gameObject.transform.localPosition = crosshairDirection;
     }
 }

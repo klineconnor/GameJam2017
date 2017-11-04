@@ -276,6 +276,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &814048665 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1108595965945018, guid: 81ba507cb85abcb47a557c6704996183,
+    type: 2}
+  m_PrefabInternal: {fileID: 1747779065}
+--- !u!114 &814048667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 814048665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aae9145608e8d0a4d9e2d0949060aa2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAX_CROSSHAIR_DISTANCE: 2
+  mainCamera: {fileID: 346751368}
+  testMouse: {x: 0, y: 0, z: 0}
+  testPos: {x: 0, y: 0, z: 0}
+  testDiff: {x: 0, y: 0, z: 0}
 --- !u!1001 &1747779065
 Prefab:
   m_ObjectHideFlags: 0
@@ -347,5 +368,6 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 114343820320021198, guid: 81ba507cb85abcb47a557c6704996183, type: 2}
+    - {fileID: 114829654484020628, guid: 81ba507cb85abcb47a557c6704996183, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 81ba507cb85abcb47a557c6704996183, type: 2}
   m_IsPrefabParent: 0
