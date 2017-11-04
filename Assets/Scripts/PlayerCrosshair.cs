@@ -30,5 +30,8 @@ public class PlayerCrosshair : MonoBehaviour {
         //testDiff = crosshairDirection;
         crosshairDirection = crosshairDirection.normalized * MAX_CROSSHAIR_DISTANCE;
         gameObject.transform.localPosition = crosshairDirection;
+
+
+
     }
 }
