@@ -164,8 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Reticle: {fileID: 1108595965945018}
   bullet: {fileID: 1588502448822020, guid: 6e0479015b3754140b607b2579eef608, type: 2}
-  speed: 20
-  CoolDown: 5
+  speed: 30
+  CoolDown: 25
   direction: {x: 0, y: 0}
 --- !u!114 &114343820320021198
 MonoBehaviour:
@@ -180,6 +180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerNumber: 1
   speed: 10
+  em: {fileID: 0}
   outputMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &114672932898580230
 MonoBehaviour:
@@ -192,6 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d4a2964b985664ea1265c13f9c8f8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bullet: {fileID: 0}
+  speed: 0
+  CoolDown: 0
 --- !u!114 &114829654484020628
 MonoBehaviour:
   m_ObjectHideFlags: 1

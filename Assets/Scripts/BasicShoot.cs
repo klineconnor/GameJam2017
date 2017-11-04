@@ -45,7 +45,9 @@ public class BasicShoot : MonoBehaviour {
     {
         if ((collision.gameObject.tag == "Pickup") && (Input.GetAxis("Pickup" + GetComponent<PlayerController>().playerNumber) > 0))
         {
-            PickupNewGun(gameObject.GetComponent<Pickup>().gun);
+            PickupNewGun(collision.gameObject.GetComponent<Pickup>().gun);
+			collision.gameObject.GetComponent<Pickup> ().PickupGrabbed ();
+
         }
     }
     void PickupNewGun(GameObject gun)

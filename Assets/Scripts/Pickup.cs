@@ -25,7 +25,7 @@ public class Pickup : MonoBehaviour {
             remainingRespawnTime--;
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    public void PickupGrabbed()
     {
         remainingRespawnTime = MAX_RESPAWN_TIME;
         pickupActive = false;
