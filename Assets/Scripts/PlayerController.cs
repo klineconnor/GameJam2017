@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour {
 
 
 	public Vector3 outputMovement;
+
+
+
+	private bool shuttingDown = false;
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
@@ -39,8 +43,14 @@ public class PlayerController : MonoBehaviour {
 		}
 
 	}
+	void OnApplicationQuit()
+	{
+		shuttingDown = true;
+	}
 
 	void OnDestroy() {
-		em.RespawnEntity (this.gameObject);
+		if (!shuttingDown) {
+			em.RespawnEntity (this.gameObject);
+		}
 	}
 }
