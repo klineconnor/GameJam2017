@@ -30,4 +30,12 @@ public class PlayerController : MonoBehaviour {
 		outputMovement = movement;
 		rb.MovePosition (transform.position + (movement * speed * Time.deltaTime));
 		//transform.Translate(movement * speed * Time.deltaTime); 	}
+
+	void OnTriggerEnter2D(Collider2D other) {
+		//print (other.gameObject.tag);
+		if ((other.gameObject.tag != ("p"+ playerNumber)) && other.GetComponent<BulletDespawn>()) {
+			Destroy(gameObject);
+		}
+
+	}
 }

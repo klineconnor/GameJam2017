@@ -36,6 +36,7 @@ public class BasicShoot : MonoBehaviour {
 				GameObject projectile = (GameObject)Instantiate (bullet, myPos, rotation);
 				myCoolDown = CoolDown;
 				projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
+				projectile.tag = "p" + GetComponent<PlayerController>().playerNumber;
 			}
 		}
 
