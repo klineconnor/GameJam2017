@@ -20,6 +20,7 @@ public class BasicShoot : MonoBehaviour {
     public int currentPitchCycle;
     private int pitchChangeDir;
 
+    GameObject currentGun;
 	private AudioSource AS;
 	// Use this for initialization
 	void Start () {
@@ -83,9 +84,10 @@ public class BasicShoot : MonoBehaviour {
         pitchChangeDir = gunData.pitchChangeDir;
 		AS.clip = gunData.bullet.GetComponent<BulletDespawn>().AC;
         currentPitch = MAX_PITCH;
-        GameObject temp = Instantiate(gun, transform.position, Quaternion.identity);
-        temp.transform.parent = gameObject.transform;
-		temp.GetComponent<BasicGun> ().gunActive = true;
+        Destroy(currentGun);
+        currentGun = Instantiate(gun, transform.position, Quaternion.identity);
+        currentGun.transform.parent = gameObject.transform;
+		currentGun.GetComponent<BasicGun> ().gunActive = true;
     }
 
     void ProcessPitch()

@@ -42,6 +42,7 @@ GameObject:
   - component: {fileID: 61386275572526764}
   - component: {fileID: 114174089219378860}
   - component: {fileID: 82178713787811230}
+  - component: {fileID: 95251311033999822}
   m_Layer: 0
   m_Name: Player1
   m_TagString: p1
@@ -201,6 +202,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!95 &95251311033999822
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1175580890992170}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bcbd219bf9e46bf4c9ac87a8a7bac5c5, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114174089219378860
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -218,6 +236,8 @@ MonoBehaviour:
   CoolDown: 25
   direction: {x: 0, y: 0}
   playerNumber: 0
+  currentPitch: 0
+  currentPitchCycle: 0
 --- !u!114 &114343820320021198
 MonoBehaviour:
   m_ObjectHideFlags: 1
