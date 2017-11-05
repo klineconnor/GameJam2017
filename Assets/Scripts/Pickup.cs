@@ -3,14 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Pickup : MonoBehaviour {
-    public GameObject gun;
+    public GameObject[] guns;
     public GameObject gunInstance;
     public bool pickupActive;
     public int MAX_RESPAWN_TIME;
     public int remainingRespawnTime;
+	public int gunIndex;
 	// Use this for initialization
 	void Start () {
-        gunInstance = Instantiate(gun, transform.position, Quaternion.identity);
+		gunIndex = Random.RandomRange (0, guns.Length);
+        gunInstance = Instantiate(guns[gunIndex], transform.position, Quaternion.identity);
         pickupActive = true;
 	}
 	
