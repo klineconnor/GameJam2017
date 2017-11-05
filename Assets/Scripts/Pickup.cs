@@ -11,7 +11,7 @@ public class Pickup : MonoBehaviour {
 	public int gunIndex;
 	// Use this for initialization
 	void Start () {
-		gunIndex = Random.Range (0, guns.Length);
+		gunIndex = Random.RandomRange (0, guns.Length);
         gunInstance = Instantiate(guns[gunIndex], transform.position, Quaternion.identity);
         pickupActive = true;
 	}
@@ -24,20 +24,12 @@ public class Pickup : MonoBehaviour {
         }
         else
         {
-            if (remainingRespawnTime <= 0)
-            {
-                print("attemptreset");
-                gunInstance = Instantiate(guns[gunIndex], transform.position, Quaternion.identity);
-                GetComponent<CircleCollider2D>().enabled = true;
-                pickupActive = true;
-            }
             remainingRespawnTime--;
         }
     }
     public void PickupGrabbed()
     {
         remainingRespawnTime = MAX_RESPAWN_TIME;
-        GetComponent<CircleCollider2D>().enabled = false;
         pickupActive = false;
     }
 }

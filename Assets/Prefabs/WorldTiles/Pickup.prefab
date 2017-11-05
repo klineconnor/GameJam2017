@@ -57,7 +57,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 1.25
+  m_Radius: 2
 --- !u!114 &114072964067601172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -76,7 +76,7 @@ MonoBehaviour:
   - {fileID: 1048110309148774, guid: 8c101fab5e1b3144faae9b05c82c13fa, type: 2}
   gunInstance: {fileID: 0}
   pickupActive: 0
-  MAX_RESPAWN_TIME: 500
+  MAX_RESPAWN_TIME: 2000
   remainingRespawnTime: 0
   gunIndex: 0
 --- !u!114 &114830974174317064
