@@ -54,8 +54,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 1819486195251000, guid: 7e751de56722a734d810fba3ae317c45, type: 2}
   speed: 40
-  CoolDown: 5
+  CoolDown: 15
   gunActive: 0
+  maxPitch: 0.8
+  minPitch: 0.5
+  pitchCycleSize: 8
+  pitchChangeDir: 1
 --- !u!212 &212612829578576178
 SpriteRenderer:
   m_ObjectHideFlags: 1

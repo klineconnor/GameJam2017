@@ -12,6 +12,14 @@ public class BasicShoot : MonoBehaviour {
     public int playerNumber;
 	private float myCoolDown;
 
+    private float MAX_PITCH;
+    private float MIN_PITCH;
+    public float currentPitch;
+
+    private int PITCH_CYCLE_MAX;
+    public int currentPitchCycle;
+    private int pitchChangeDir;
+
 	private AudioSource AS;
 	// Use this for initialization
 	void Start () {
@@ -39,6 +47,7 @@ public class BasicShoot : MonoBehaviour {
 			if (myCoolDown == 0) {
 				GameObject projectile = (GameObject)Instantiate (bullet, myPos, rotation);
 				AS.Play ();
+                ProcessPitch();
 				myCoolDown = CoolDown;
 				projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
 				projectile.tag = "p" + playerNumber;
@@ -68,9 +77,29 @@ public class BasicShoot : MonoBehaviour {
         bullet = gunData.bullet;
         speed = gunData.speed;
         CoolDown = gunData.CoolDown;
+        MAX_PITCH = gunData.maxPitch;
+        MIN_PITCH = gunData.minPitch;
+        PITCH_CYCLE_MAX = gunData.pitchCycleSize;
+        pitchChangeDir = gunData.pitchChangeDir;
 		AS.clip = gunData.bullet.GetComponent<BulletDespawn>().AC;
+        currentPitch = MAX_PITCH;
         GameObject temp = Instantiate(gun, transform.position, Quaternion.identity);
         temp.transform.parent = gameObject.transform;
 		temp.GetComponent<BasicGun> ().gunActive = true;
+    }
+
+    void ProcessPitch()
+    {
+        if((currentPitchCycle <= 0)&&(pitchChangeDir < 0))
+        {
+            currentPitchCycle = PITCH_CYCLE_MAX;
+        }
+        else if ((currentPitchCycle >= PITCH_CYCLE_MAX) && (pitchChangeDir > 0))
+        {
+            currentPitchCycle = 0;
+        }
+        currentPitch = ((MAX_PITCH - MIN_PITCH) * ((float) currentPitchCycle / (float) PITCH_CYCLE_MAX)) + MIN_PITCH;
+        AS.pitch = currentPitch;
+        currentPitchCycle += pitchChangeDir;
     }
 }
