@@ -43,6 +43,13 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D(Collision2D coll){
+		//print (other.gameObject.tag);
+		if ((coll.gameObject.tag != ("p"+ playerNumber)) && coll.gameObject.GetComponent<BulletDespawn>()) {
+			Destroy(gameObject);
+		}
+	}
+
     void OnApplicationQuit()
 	{
 		shuttingDown = true;
