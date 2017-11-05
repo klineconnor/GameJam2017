@@ -9,12 +9,12 @@ public class BasicShoot : MonoBehaviour {
 	public float speed;
 	public float CoolDown;
 	public Vector2 direction;
-
+    public int playerNumber;
 	private float myCoolDown;
 	// Use this for initialization
 	void Start () {
-		
-	}
+        playerNumber = gameObject.GetComponent<PlayerController>().playerNumber;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,15 +28,15 @@ public class BasicShoot : MonoBehaviour {
 		direction = target - myPos;
 		direction.Normalize();
 
-		if (Input.GetAxis("FireP" + GetComponent<PlayerController>().playerNumber)>0) {
-			//print ("Try Fire");
+		if (Input.GetAxis("FireP" + playerNumber)>0) {
+			print ("Try Fire " + playerNumber);
 
 			Quaternion rotation = Quaternion.Euler( 0, 0, Mathf.Atan2 ( direction.y, direction.x ) * Mathf.Rad2Deg );
 			if (myCoolDown == 0) {
 				GameObject projectile = (GameObject)Instantiate (bullet, myPos, rotation);
 				myCoolDown = CoolDown;
 				projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
-				projectile.tag = "p" + GetComponent<PlayerController>().playerNumber;
+				projectile.tag = "p" + playerNumber;
 			}
 		}
 	}
