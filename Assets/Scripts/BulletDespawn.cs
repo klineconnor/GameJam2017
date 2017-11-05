@@ -10,6 +10,7 @@ public class BulletDespawn : MonoBehaviour {
 	public float despawnTime;
     public float damage;
 	public AudioClip AC;
+    public int playerNumber;
 	// Use this for initialization
 	void Start () {
         remainingBounces = MAX_BOUNCES;

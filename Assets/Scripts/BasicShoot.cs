@@ -52,6 +52,7 @@ public class BasicShoot : MonoBehaviour {
 				myCoolDown = CoolDown;
 				projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
 				projectile.tag = "p" + playerNumber;
+                projectile.GetComponent<BulletDespawn>().playerNumber = playerNumber;
 			}
 		}
 	}

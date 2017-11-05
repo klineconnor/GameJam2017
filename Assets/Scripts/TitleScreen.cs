@@ -6,6 +6,7 @@ public class TitleScreen : MonoBehaviour {
 
 
 	public int numPlayers = 0;
+    public int winnerNum;
 
 	void Awake()
 	{

@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
 	public EntityManager em;
     public float health;
 
-
+    public ScoreManager SM;
 	public Vector3 outputMovement;
 
 
@@ -19,7 +19,10 @@ public class PlayerController : MonoBehaviour {
 	void Start()
 	{
 		rb = GetComponent<Rigidbody2D>();
-	}
+        SM = em.gameObject.GetComponent<ScoreManager>();
+
+        SM.UpdateHealth(playerNumber, health);
+    }
 
     /*private void FixedUpdate()
     {
@@ -40,21 +43,23 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		//print (other.gameObject.tag);
 		if ((other.gameObject.tag != ("p"+ playerNumber)) && other.GetComponent<BulletDespawn>()) {
-			HitDamage(other.GetComponent<BulletDespawn>().damage);
+			HitDamage(other.GetComponent<BulletDespawn>().damage, other.GetComponent<BulletDespawn>().playerNumber);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
 		//print (other.gameObject.tag);
 		if ((coll.gameObject.tag != ("p"+ playerNumber)) && coll.gameObject.GetComponent<BulletDespawn>()) {
-			HitDamage(coll.gameObject.GetComponent<BulletDespawn>().damage);
+			HitDamage(coll.gameObject.GetComponent<BulletDespawn>().damage, coll.gameObject.GetComponent<BulletDespawn>().playerNumber);
 		}
 	}
 
-    void HitDamage(float damage) {
+    void HitDamage(float damage, int enemyNum) {
         health -= damage;
+        SM.UpdateHealth(playerNumber, health);
         if (health < 0)
         {
+            SM.UpdateScore(enemyNum, 1);
             Destroy(gameObject);
         }
     }
