@@ -102,6 +102,7 @@ MonoBehaviour:
   MAX_BOUNCES: 0
   remainingBounces: 0
   despawnTime: 100
+  damage: 15
 --- !u!212 &212899406804636024
 SpriteRenderer:
   m_ObjectHideFlags: 1

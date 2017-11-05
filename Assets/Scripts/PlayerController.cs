@@ -40,14 +40,14 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		//print (other.gameObject.tag);
 		if ((other.gameObject.tag != ("p"+ playerNumber)) && other.GetComponent<BulletDespawn>()) {
-			HitDamage(5);
+			HitDamage(other.GetComponent<BulletDespawn>().damage);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
 		//print (other.gameObject.tag);
 		if ((coll.gameObject.tag != ("p"+ playerNumber)) && coll.gameObject.GetComponent<BulletDespawn>()) {
-			HitDamage(5);
+			HitDamage(coll.gameObject.GetComponent<BulletDespawn>().damage);
 		}
 	}
 
