@@ -24,7 +24,7 @@ public class EntitySpawner : MonoBehaviour {
 
     public void SpawnEntity()
     {
-        print("Spawning");
+        //print("Spawning");
         GameObject temp = Instantiate(entity, transform.position, Quaternion.identity);
 		temp.GetComponent<PlayerController>().em = em;
     }

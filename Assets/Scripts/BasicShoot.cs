@@ -46,15 +46,15 @@ public class BasicShoot : MonoBehaviour {
 		if ((collision.gameObject.tag == "Pickup"))
 		{
 			
-			print ("Pickuponly " );
-			print (Input.GetButton ("PickupP" + GetComponent<PlayerController>().playerNumber));
+			//print ("Pickuponly " );
+			//print (Input.GetButton ("PickupP" + GetComponent<PlayerController>().playerNumber));
 		}
 		if ((collision.gameObject.tag == "Pickup"))//&& (Input.GetAxis("PickupP" + GetComponent<PlayerController>().playerNumber) > 0))
         {
 			PickupNewGun(collision.gameObject.GetComponent<Pickup>().guns[collision.gameObject.GetComponent<Pickup>().gunIndex]);
 			collision.gameObject.GetComponent<Pickup>().PickupGrabbed();
             Destroy(collision.gameObject.GetComponent<Pickup>().gunInstance);
-			print ("Pickup");
+			//print ("Pickup");
         }
     }
     void PickupNewGun(GameObject gun)
