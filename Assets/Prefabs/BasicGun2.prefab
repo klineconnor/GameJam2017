@@ -56,6 +56,10 @@ MonoBehaviour:
   speed: 20
   CoolDown: 20
   gunActive: 0
+  maxPitch: 1.1
+  minPitch: 0.8
+  pitchCycleSize: 5
+  pitchChangeDir: -1
 --- !u!212 &212014910150575712
 SpriteRenderer:
   m_ObjectHideFlags: 1

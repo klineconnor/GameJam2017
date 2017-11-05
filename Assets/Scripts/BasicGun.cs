@@ -9,7 +9,10 @@ public class BasicGun : MonoBehaviour {
     public float speed;
     public float CoolDown;
 	public bool gunActive = false;
-
+    public float maxPitch;
+    public float minPitch;
+    public int pitchCycleSize;
+    public int pitchChangeDir;
 
     Vector3 targetDirection;
     // Use this for initialization
