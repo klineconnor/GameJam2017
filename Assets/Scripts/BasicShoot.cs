@@ -39,6 +39,31 @@ public class BasicShoot : MonoBehaviour {
 				projectile.tag = "p" + GetComponent<PlayerController>().playerNumber;
 			}
 		}
-
 	}
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+		if ((collision.gameObject.tag == "Pickup"))
+		{
+			
+			print ("Pickuponly " );
+			print (Input.GetButton ("PickupP" + GetComponent<PlayerController>().playerNumber));
+		}
+		if ((collision.gameObject.tag == "Pickup"))//&& (Input.GetAxis("PickupP" + GetComponent<PlayerController>().playerNumber) > 0))
+        {
+			PickupNewGun(collision.gameObject.GetComponent<Pickup>().guns[collision.gameObject.GetComponent<Pickup>().gunIndex]);
+			collision.gameObject.GetComponent<Pickup>().PickupGrabbed();
+			print ("Pickup");
+        }
+    }
+    void PickupNewGun(GameObject gun)
+    {
+        BasicGun gunData = gun.GetComponent<BasicGun>();
+        bullet = gunData.bullet;
+        speed = gunData.speed;
+        CoolDown = gunData.CoolDown;
+        GameObject temp = Instantiate(gun, transform.position, Quaternion.identity);
+        temp.transform.parent = gameObject.transform;
+		temp.GetComponent<BasicGun> ().gunActive = true;
+    }
 }

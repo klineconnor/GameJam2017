@@ -41,9 +41,9 @@ public class PlayerController : MonoBehaviour {
 		if ((other.gameObject.tag != ("p"+ playerNumber)) && other.GetComponent<BulletDespawn>()) {
 			Destroy(gameObject);
 		}
-
 	}
-	void OnApplicationQuit()
+
+    void OnApplicationQuit()
 	{
 		shuttingDown = true;
 	}
