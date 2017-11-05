@@ -53,6 +53,7 @@ public class BasicShoot : MonoBehaviour {
         {
 			PickupNewGun(collision.gameObject.GetComponent<Pickup>().guns[collision.gameObject.GetComponent<Pickup>().gunIndex]);
 			collision.gameObject.GetComponent<Pickup>().PickupGrabbed();
+            Destroy(collision.gameObject.GetComponent<Pickup>().gunInstance);
 			print ("Pickup");
         }
     }
