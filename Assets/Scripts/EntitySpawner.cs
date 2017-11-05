@@ -10,11 +10,16 @@ public class EntitySpawner : MonoBehaviour {
 	void Start () {
         em = GetComponentInParent<EntityManager>();
         em.AddEntitySpawner(gameObject);
-
-        if (spawnAtStart)
-        {
-            SpawnEntity();
-        }
+		int totalPlayers = GameObject.Find ("Persistant").GetComponent<TitleScreen> ().numPlayers;
+		int playerNum = entity.GetComponent<PlayerController> ().playerNumber;
+		print ("Spawning " + playerNum + " out of " + totalPlayers);
+		if (playerNum <= totalPlayers) {
+			print ("Success " + playerNum);
+			if (spawnAtStart)
+			{
+				SpawnEntity();
+			}
+		}
 	}
 	
 	// Update is called once per frame

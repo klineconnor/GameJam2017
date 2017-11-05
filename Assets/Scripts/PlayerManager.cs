@@ -6,12 +6,14 @@ public class GameManager : MonoBehaviour {
 
 	public static GameManager instance;
 
+
+
+	int PlayerAmount;
+
 	void Awake()
 	{
 		instance = this;
 	}
-
-	int PlayerAmount;
 
 	public void setPlayerAmount(int amount)
 	{

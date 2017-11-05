@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class TitleScreen : MonoBehaviour {
 
+
+	public int numPlayers = 0;
+
 	void Awake()
 	{
 		DontDestroyOnLoad(gameObject);
 	}
-	public int numPlayers = 0;
 
 	public void setPlayers(int num)
 	{
+		print ("SetPlayer" + num);
 		numPlayers = num;
 	}
 }
