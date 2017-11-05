@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212085205211994494}
   - component: {fileID: 58180958114931860}
   - component: {fileID: 114412860461868074}
+  - component: {fileID: 114763219673836612}
   m_Layer: 0
   m_Name: P4Spawn
   m_TagString: Respawn
@@ -72,6 +73,19 @@ MonoBehaviour:
   tileID: {x: 0, y: 0}
   tileTypeID: 0
   levelManager: {fileID: 0}
+--- !u!114 &114763219673836612
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1700263389589598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ec50bad52e34d4eb5fb5533fcb4369, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  entity: {fileID: 1398070376556060, guid: 22d1160f22bf9e44a8290fdb810fd480, type: 2}
+  spawnAtStart: 1
 --- !u!212 &212085205211994494
 SpriteRenderer:
   m_ObjectHideFlags: 1
