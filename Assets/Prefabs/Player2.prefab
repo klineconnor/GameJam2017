@@ -134,6 +134,7 @@ MonoBehaviour:
   playerNumber: 2
   speed: 10
   em: {fileID: 0}
+  health: 15
   outputMovement: {x: 0, y: 0, z: 0}
 --- !u!114 &114377582650250080
 MonoBehaviour:

@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public float speed;
 	Rigidbody2D rb;
 	public EntityManager em;
+    public float health;
 
 
 	public Vector3 outputMovement;
@@ -39,16 +40,24 @@ public class PlayerController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		//print (other.gameObject.tag);
 		if ((other.gameObject.tag != ("p"+ playerNumber)) && other.GetComponent<BulletDespawn>()) {
-			Destroy(gameObject);
+			HitDamage(5);
 		}
 	}
 
 	void OnCollisionEnter2D(Collision2D coll){
 		//print (other.gameObject.tag);
 		if ((coll.gameObject.tag != ("p"+ playerNumber)) && coll.gameObject.GetComponent<BulletDespawn>()) {
-			Destroy(gameObject);
+			HitDamage(5);
 		}
 	}
+
+    void HitDamage(float damage) {
+        health -= damage;
+        if (health < 0)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void OnApplicationQuit()
 	{
