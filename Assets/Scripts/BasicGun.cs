@@ -10,6 +10,7 @@ public class BasicGun : MonoBehaviour {
     public float CoolDown;
 	public bool gunActive = false;
 
+
     Vector3 targetDirection;
     // Use this for initialization
     void Start () {

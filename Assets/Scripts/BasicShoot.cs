@@ -11,9 +11,12 @@ public class BasicShoot : MonoBehaviour {
 	public Vector2 direction;
     public int playerNumber;
 	private float myCoolDown;
+
+	private AudioSource AS;
 	// Use this for initialization
 	void Start () {
         playerNumber = gameObject.GetComponent<PlayerController>().playerNumber;
+		AS = GetComponent<AudioSource>();
     }
 	
 	// Update is called once per frame
@@ -29,11 +32,13 @@ public class BasicShoot : MonoBehaviour {
 		direction.Normalize();
 
 		if (Input.GetAxis("FireP" + playerNumber)>0) {
-			print ("Try Fire " + playerNumber);
+			//print ("Try Fire " + playerNumber);
 
 			Quaternion rotation = Quaternion.Euler( 0, 0, Mathf.Atan2 ( direction.y, direction.x ) * Mathf.Rad2Deg );
+
 			if (myCoolDown == 0) {
 				GameObject projectile = (GameObject)Instantiate (bullet, myPos, rotation);
+				AS.Play ();
 				myCoolDown = CoolDown;
 				projectile.GetComponent<Rigidbody2D>().velocity = direction * speed;
 				projectile.tag = "p" + playerNumber;
@@ -63,6 +68,7 @@ public class BasicShoot : MonoBehaviour {
         bullet = gunData.bullet;
         speed = gunData.speed;
         CoolDown = gunData.CoolDown;
+		AS.clip = gunData.bullet.GetComponent<BulletDespawn>().AC;
         GameObject temp = Instantiate(gun, transform.position, Quaternion.identity);
         temp.transform.parent = gameObject.transform;
 		temp.GetComponent<BasicGun> ().gunActive = true;

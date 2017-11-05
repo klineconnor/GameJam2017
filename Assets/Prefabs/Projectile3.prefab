@@ -103,6 +103,7 @@ MonoBehaviour:
   remainingBounces: 0
   despawnTime: 15
   damage: 2
+  AC: {fileID: 8300000, guid: 894655729945c5341884e14074cc379b, type: 3}
 --- !u!212 &212256360504685450
 SpriteRenderer:
   m_ObjectHideFlags: 1
