@@ -58,7 +58,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 5176d725a9bb1a24cac872192b906244, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -99,6 +99,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 628b533510a56034cb76ecec3d0212f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_BOUNCES: 0
+  remainingBounces: 0
   despawnTime: 100
 --- !u!212 &212899406804636024
 SpriteRenderer:
